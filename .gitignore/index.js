@@ -1,7 +1,6 @@
 const Discord = require("discord.js");
 var bot = new Discord.Client();
 bot.on("ready" , function()  {
-    bot.user.setGame("ShowBot, !help");
     console.log("Bot Ready !"); 
  });
  
@@ -12,20 +11,8 @@ bot.on("message" , message => {
        message.reply("pong");
        console.log("ping pong");
     }
-
-
-
-
- 
-
-    if (message.content === prefix + "help"){
-        message.channel.sendMessage("Voici les commandes du bot :\n -/help pour afficher les commandes");
-        message.channel.sendMessage("-/kick pour kick un joueur");
-        message.channel.sendMessage("-/ban pour ban un joueur");
-        console.log("Commande Help demandée !");  
-
     }
-});
+);
 
 bot.on("message" , message => {
     if (message.content === "Bonjour"){
