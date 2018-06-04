@@ -1,9 +1,0 @@
-{
-
-    "token": "process.env.TOKEN",
-
-    "prefix": "/",
-
-    "youtube_api_key": "AIzaSyDeD6sYpaBy-KJ7GRj3qWwhKJtkIiFhQYs"
-
-}
