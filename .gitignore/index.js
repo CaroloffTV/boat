@@ -1,3 +1,21 @@
+'use strict';
+const config = require('./config.json');
+
+const cmds = require('./commands.js');
+
+const music = require('./music.js');
+
+const tool = require('./tool.js');
+
+
+
+const prompt = require('prompt');
+
+const colors = require('colors');
+
+prompt.message = '';
+
+prompt.delimiter = '';
 const Discord = require("discord.js");
 var bot = new Discord.Client();
 var prefix = ("/")
