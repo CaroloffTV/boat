@@ -1,6 +1,5 @@
 
 
-
 const Discord = require("discord.js");
 var bot = new Discord.Client();
 var prefix = ("!")
@@ -18,7 +17,7 @@ bot.on("ready" , () => {
 bot.login("NDMyOTY4NTE0OTY2NTE5ODI4.Da1NYA.zPWNG5X546Ez_XEHyXbPFVgwSeM");
  
 bot.on("guildMemberAdd", member => {
-    member.guild.channels.find("name", "général").send(' ${member.user.username} vient de rejoindre le serveur, bienvenue et bon jeu. Plus d\'info !help')
+    member.guild.channels.find("name", "général").send(` ${member.user.username} vient de rejoindre le serveur, bienvenue et bon jeu. Plus d\'info !help`)
 
 })
 
@@ -162,8 +161,3 @@ bot.on("guildMemberRemove", member => {
 
                
                
-
-               
-
-
-
