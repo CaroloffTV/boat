@@ -1,16 +1,33 @@
 
+
+
 const Discord = require("discord.js");
 var bot = new Discord.Client();
-var prefix = ("/")
+var prefix = ("!")
 var randnum = 0
-bot.on("ready" , function()  {
-    console.log("Bot Ready !"); 
- });
- 
- bot.login(process.env.TOKEN);
 
+
+
+
+
+bot.on("ready" , () => {
+
+   console.log("Bot Ready !"); 
+});
+
+bot.login("NDMyOTY4NTE0OTY2NTE5ODI4.Da1NYA.zPWNG5X546Ez_XEHyXbPFVgwSeM");
  
- ///////////////////////////////////////////////////////////////////////// MESSAGES /////////////////////////////////////////////////////////////////////////////////////////////////
+bot.on("guildMemberAdd", member => {
+    member.guild.channels.find("name", "général").send(' ${member.user.username} vient de rejoindre le serveur, bienvenue et bon jeu. Plus d\'info !help')
+
+})
+
+bot.on("guildMemberRemove", member => {
+    member.guild.channels.find("name", "général").send('${user.username} vient de quitter le serveur à bientôt et bon jeu') 
+
+}) 
+
+///////////////////////////////////////////////////////////////////////// MESSAGES /////////////////////////////////////////////////////////////////////////////////////////////////
  
  
  bot.on("message" , message => {
@@ -98,10 +115,16 @@ bot.on("ready" , function()  {
   
  
      if (message.content === prefix + "help"){
-         message.channel.sendMessage("Voici les commandes du bot :\n -/help pour afficher les commandes");
-         message.channel.sendMessage("-/kick pour kick un joueur");
-         message.channel.sendMessage("-/ban pour ban un joueur");
-         console.log("Commande Help demandée !");  
+         var help_embed = new Discord.RichEmbed()
+         .setColor("#D9F200")
+         .addField("Commandes du bot !", "    -/help: Affiche les commandes du bot!")
+         .addField("Interaction", "   Commandes possibles : ")
+         .addField("-/kick: Permet de Kicker un joueur", "   Modérateur seulement !")
+         .addField("-/ban: Permet de ban un joueur", "   Modérateur seulement !")
+         message.channel.sendEmbed(help_embed);
+         //message.channel.sendMessage("Voici les commandes du bot :\n -/help pour afficher les commandes");
+         
+        console.log("Commande Help demandée !");  
  
      }
  });
@@ -136,6 +159,10 @@ bot.on("ready" , function()  {
                 
  
                 }});
+
+               
+               
+
                
 
 
