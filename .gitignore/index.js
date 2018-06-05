@@ -17,12 +17,12 @@ bot.on("ready" , () => {
 bot.login("NDMyOTY4NTE0OTY2NTE5ODI4.Da1NYA.zPWNG5X546Ez_XEHyXbPFVgwSeM");
  
 bot.on("guildMemberAdd", member => {
-    member.guild.channels.find("name", "général").send(` ${member.user.username} vient de rejoindre le serveur, bienvenue et bon jeu. Plus d\'info !help`)
+    member.guild.channels.find("name", "général").send(` ${member.user.username} vient de rejoindre le serveur ! Bienvenue et bon jeu. Pour plus d\'infos : !help`)
 
 })
 
 bot.on("guildMemberRemove", member => {
-    member.guild.channels.find("name", "général").send(`${member.user.username} vient de quitter le serveur à bientôt et bon jeu`) 
+    member.guild.channels.find("name", "général").send(`${member.user.username} vient de quitter le serveur ! A bientôt et bon jeu.`) 
 
 }) 
 
