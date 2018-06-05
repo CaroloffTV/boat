@@ -129,35 +129,26 @@ bot.on("guildMemberRemove", member => {
  });
  
  bot.on("message" , message => {
-     if (message.content === "Bonjour"){
+     if (message.content.toUpperCase() === "BONJOUR"){
          message.reply("Bonjour");
          console.log("Bonjour Bonjour");
-     }});
- 
-     bot.on("message" , message => {
-         if (message.content === "bonjour"){
-             message.reply("Bonjour");
-             console.log("bonjour Bonjour");
-         }});
- 
-         bot.on("message" , message => {
-             if (message.content === "Bonsoir"){
-                 message.reply("Bonsoir");
-                 console.log("Bonsoir Bonsoir");
-             }});
- 
-             bot.on("message" , message => {
-                 if (message.content === "bonsoir"){
-                     message.reply("Bonsoir");
-                     console.log("bonsoir Bonsoir");
-                 }});
-              bot.on("message" , message => {
-                 if (message.content === "Bonne nuit"){
-                     message.reply("Bonne nuit");
-                     console.log("Bonne nuit Bonne nuit");
-                
- 
-                }});
+    }});
+
+bot.on("message" , message => {
+    if (message.content.toUpperCase() === "BONSOIR"){
+    message.reply("Bonsoir");
+    console.log("Bonsoir Bonsoir");
+    }});
+bot.on("message" , message => {
+    if (message.content.toUpperCase() === "BONNE NUIT"){
+    message.reply("Bonne nuit !");
+    console.log("Bonne nuit Bonne nuit");
+    }});
+bot.on("message" , message => {
+    if (message.content.toUpperCase() === "MERCI"){
+    message.reply("De rien !");
+    console.log("Merci De rien");
+    }});
 
                
                
