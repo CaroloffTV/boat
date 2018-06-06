@@ -22,7 +22,7 @@ bot.on("guildMemberAdd", member => {
 })
 
 bot.on("guildMemberRemove", member => {
-    member.guild.channels.find("name", "général").send(`${member.user.username} vient de quitter le serveur ! A bientôt et bon jeu.`) 
+    member.guild.channels.find("name", "général").send(` ${member.user.username} vient de quitter le serveur ! A bientôt et bon jeu.`) 
 
 }) 
 
