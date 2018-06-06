@@ -39,19 +39,7 @@ bot.on("guildMemberRemove", member => {
  
   switch (args[0].toLowerCase()){
  
- case "newstory":
- var value = message.content.substr(10); 
- var author = message.author.toString();
- var number = db.get('histoires').map('id').value();
- //var storyid = number + 1;
- console.log(value);
- message.reply("Ajout de l'histoire dans la base de donnée")
- db.get("histoires")
-  .push({  story_value: value, story_author: author})
-  .write();
- 
- 
- break;
+
    
  case "kick":
  
