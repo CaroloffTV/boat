@@ -14,7 +14,7 @@ bot.on("ready" , () => {
    console.log("Bot Ready !"); 
 });
 
-bot.login(process.env.TOKEN);
+bot.login("NDMyOTY4NTE0OTY2NTE5ODI4.Da1NYA.zPWNG5X546Ez_XEHyXbPFVgwSeM");
  
 bot.on("guildMemberAdd", member => {
     member.guild.channels.find("name", "général").send(` ${member.user.username} vient de rejoindre le serveur ! Bienvenue et bon jeu. Pour plus d\'infos : !help`)
@@ -22,7 +22,7 @@ bot.on("guildMemberAdd", member => {
 })
 
 bot.on("guildMemberRemove", member => {
-    member.guild.channels.find("name", "général").send(` ${member.user.username} vient de quitter le serveur ! A bientôt et bon jeu.`) 
+    member.guild.channels.find("name", "général").send(`${member.user.username} vient de quitter le serveur ! A bientôt et bon jeu.`) 
 
 }) 
 
@@ -57,7 +57,7 @@ bot.on("guildMemberRemove", member => {
      message.reply("Utilisateur impossible à kick ! ");
  }else{
  message.guild.member(memberkick).kick().then((member) => {
-     message.channel.send('${member.displayName} a été kick ! ');
+     message.channel.send(`${member.user.username} a été kick ! `);
  }).catch(() => {
      message.channel.send("kick Refusé !")
  
@@ -84,7 +84,7 @@ bot.on("guildMemberRemove", member => {
      message.reply("Utilisateur impossible à ban ! ");
  }else{
  message.guild.member(memberban).ban().then((member) => {
-     message.channel.send('${member.displayName} a été ban ! ');
+     message.channel.send(`${member.user.username} a été ban ! `);
  }).catch(() => {
      message.channel.send("ban Refusé !")
  
@@ -92,9 +92,8 @@ bot.on("guildMemberRemove", member => {
  }
  }
  }
- 
- 
- break;
+break;
++
  
  
  
@@ -104,10 +103,15 @@ bot.on("guildMemberRemove", member => {
      if (message.content === prefix + "help"){
          var help_embed = new Discord.RichEmbed()
          .setColor("#D9F200")
-         .addField("Commandes du bot !", "    -/help: Affiche les commandes du bot!")
-         .addField("Interaction", "   Commandes possibles : ")
-         .addField("-/kick: Permet de Kicker un joueur", "   Modérateur seulement !")
-         .addField("-/ban: Permet de ban un joueur", "   Modérateur seulement !")
+         .addField("Commandes du bot !", "    - !help: Affiche les commandes du bot!")
+         .addField("Interactions", "   Commandes possibles : ")
+         .addField("- !kick: Permet de Kicker un joueur", "   Modérateur seulement !")
+         .addField("- !ban: Permet de ban un joueur", "   Modérateur seulement !")
+         .addField("- !mute: Permet de mute un joueur (non disponible)", "   Modérateur seulement !")
+         .addField("- !forum Trust: Permet de voir le forum", "   Tout le monde !")
+         .addField("- !purge: Permet de supprimer des messages (non disponible)",  "    Modérateur seulement !")
+         
+
          message.channel.sendEmbed(help_embed);
          //message.channel.sendMessage("Voici les commandes du bot :\n -/help pour afficher les commandes");
          
@@ -138,5 +142,13 @@ bot.on("message" , message => {
     console.log("Merci De rien");
     }});
 
+    bot.on("message" , message => {
+        if (message.content.toUpperCase() === "!FORUM TRUST"){
+        message.reply("http://trust-gaming.fr/forum/index.php");
+        console.log("http://trust-gaming.fr/forum/index.php");
+        }});
+    
+
                
                
+
