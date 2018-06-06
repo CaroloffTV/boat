@@ -163,6 +163,12 @@ bot.on("message" , message => {
         message.reply("http://trust-gaming.fr/forum/index.php");
         console.log("http://trust-gaming.fr/forum/index.php");
         }});
+bot.on("message" , message => {
+        if (message.content.toUpperCase() === "SALUT"){
+        message.reply("Salut");
+        console.log("salut");
+        }});
+    
     
 
                
