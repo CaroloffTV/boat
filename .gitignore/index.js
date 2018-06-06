@@ -14,7 +14,7 @@ bot.on("ready" , () => {
    console.log("Bot Ready !"); 
 });
 
-bot.login("NDMyOTY4NTE0OTY2NTE5ODI4.Da1NYA.zPWNG5X546Ez_XEHyXbPFVgwSeM");
+bot.login(process.env.TOKEN);
  
 bot.on("guildMemberAdd", member => {
     member.guild.channels.find("name", "général").send(` ${member.user.username} vient de rejoindre le serveur ! Bienvenue et bon jeu. Pour plus d\'infos : !help`)
