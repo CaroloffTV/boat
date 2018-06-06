@@ -93,7 +93,23 @@ bot.on("guildMemberRemove", member => {
  }
  }
 break;
-+
+case "mute":
+
+if (!message.channel.permissionsFor(message.member).hasPermissions("MUTE_MEMBERS")){
+    message.reply("Tu n'as pas le droit de mute des joueurs !");
+}else{
+var membermute = message.mentions.members.first();
+if(!membermute){
+    message.reply("Ce joueur n\'existe pas !");
+}else{
+message.guild.member(membermute).addRole("Muted").then((member) => {
+    message.channel.send(`${member.displayName} a été mute ! `);
+    console.log(`${member.displayName} a été mute ! `);
+}).catch(() => {
+    message.channel.send("Mute refusé !")
+    console.log(`Mute refusé !`);
+})}}
+break;
  
  
  
@@ -107,9 +123,9 @@ break;
          .addField("Interactions", "   Commandes possibles : ")
          .addField("- !kick: Permet de Kicker un joueur", "   Modérateur seulement !")
          .addField("- !ban: Permet de ban un joueur", "   Modérateur seulement !")
-         .addField("- !mute: Permet de mute un joueur (non disponible)", "   Modérateur seulement !")
+         .addField("- !mute: Permet de mute un joueur", "   Modérateur seulement !")
          .addField("- !forum Trust: Permet de voir le forum", "   Tout le monde !")
-         .addField("- !purge: Permet de supprimer des messages (non disponible)",  "    Modérateur seulement !")
+         .addField("- !purge: Permet de supprimer des messages",  "    Modérateur seulement !")
          
 
          message.channel.sendEmbed(help_embed);
