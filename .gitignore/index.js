@@ -126,6 +126,7 @@ break;
          .addField("- !mute: Permet de mute un joueur", "   Modérateur seulement !")
          .addField("- !forum Trust: Permet de voir le forum", "   Tout le monde !")
          .addField("- !purge: Permet de supprimer des messages",  "    Modérateur seulement !")
+         .addField("- !site: Permet de voir le site", "   Tout le monde !")
          
 
          message.channel.sendEmbed(help_embed);
@@ -167,6 +168,12 @@ bot.on("message" , message => {
         if (message.content.toUpperCase() === "SALUT"){
         message.reply("Salut");
         console.log("salut");
+        }});
+
+ bot.on("message" , message => {
+        if (message.content.toUpperCase() === "!SITE"){
+        message.reply("http://trust-gaming.fr/minecraft.php");
+        console.log("http://trust-gaming.fr/minecraft.php");
         }});
     
     
